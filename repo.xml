@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<extensions>
+  <details>
+    <title lang="EN">Mobile Transcode Rules Repository</title>
+  </details>
+  <plugins>
+    <plugin name="MobileTranscode" version="1.0.0" minTarget="7.9" maxTarget="9.*">
+      <title lang="EN">Mobile Transcode Rules</title>
+      <desc lang="EN">Optimized custom-convert.conf rules for mobile Squeezebox clients (LyrPlay, xTune, Squeezelite). Uses FT flag for fast pipeline launch to prevent timeout errors.</desc>
+      <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.0.0/MobileTranscode-1.0.0.zip</url>
+      <sha>91ffb53197074dfdc92e8fc30927c922d0ce4a65</sha>
+      <link>https://github.com/mtxmiller/MobileTranscode</link>
+      <creator>Eric Miller (mtxmiller)</creator>
+      <email>ericlmiller@gmail.com</email>
+    </plugin>
+  </plugins>
+</extensions>

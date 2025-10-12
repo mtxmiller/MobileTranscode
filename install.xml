@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<extension>
+  <name>PLUGIN_MOBILETRANSCODE</name>
+  <module>Plugins::MobileTranscode::Plugin</module>
+  <version>1.0.0</version>
+  <description>PLUGIN_MOBILETRANSCODE_DESC</description>
+  <creator>Eric Miller (mtxmiller)</creator>
+  <homepageURL>https://github.com/mtxmiller/MobileTranscode</homepageURL>
+  <email>ericlmiller@gmail.com</email>
+  <defaultState>enabled</defaultState>
+  <type>2</type>
+  <targetApplication>
+    <id>SlimServer</id>
+    <minVersion>7.9</minVersion>
+    <maxVersion>9.*</maxVersion>
+  </targetApplication>
+</extension>

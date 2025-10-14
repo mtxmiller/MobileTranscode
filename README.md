@@ -9,17 +9,17 @@ This plugin provides optimized transcode rules for mobile streaming apps that co
 ## Currently Supported Apps
 
 - **LyrPlay** (iOS) - Optimized for iPhone/iPad streaming
+- **Others?**
 
 ## Installation
 
 ### For Users
 
-**It's simple:**
-
 1. In LMS web interface, go to **Settings → Plugins → Third Party**
-2. Find **Mobile Transcode Rules** and click **Install**
-3. **Restart LMS**
-4. Done! Your mobile app automatically uses the optimized rules
+2. Add a 3rd party plugin at this link: https://raw.githubusercontent.com/mtxmiller/MobileTranscode/main/repo.xml
+3. Find **Mobile Transcode Rules** and click **Install**
+4. **Restart LMS**
+5. Done! Your mobile app automatically uses the optimized rules
 
 **How it works:** LMS automatically searches all plugin directories for `custom-convert.conf` files. When you install this plugin, LMS finds and uses the rules immediately after restart.
 
@@ -55,15 +55,7 @@ flc ogg YourAppName *
 
 See `custom-convert.conf` in this plugin for a complete template with detailed comments.
 
-#### Step 3: Test Thoroughly
-
-- Seeking within tracks
-- Track transitions
-- Different FLAC bit depths (16-bit, 24-bit)
-- Network conditions (WiFi, cellular)
-- Check LMS logs for errors
-
-#### Step 4: Submit Pull Request
+#### Step 3: Submit Pull Request
 
 Include:
 - App name and platform

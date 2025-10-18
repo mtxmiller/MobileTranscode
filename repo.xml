@@ -4,11 +4,11 @@
     <title lang="EN">Mobile Transcode Rules Repository</title>
   </details>
   <plugins>
-    <plugin name="MobileTranscode" version="1.0.0" minTarget="7.9" maxTarget="9.*">
+    <plugin name="MobileTranscode" version="1.0.1" minTarget="7.9" maxTarget="9.*">
       <title lang="EN">Mobile Transcode Rules</title>
-      <desc lang="EN">Optimized custom-convert.conf rules for mobile Squeezebox clients (LyrPlay, xTune, Squeezelite). Uses FT flag for fast pipeline launch to prevent timeout errors.</desc>
-      <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.0.0/MobileTranscode-1.0.0.zip</url>
-      <sha>91ffb53197074dfdc92e8fc30927c922d0ce4a65</sha>
+      <desc lang="EN">Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and faster transcoding.</desc>
+      <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.0.1/MobileTranscode-1.0.1.zip</url>
+      <sha>5c660a4dc0c4ce8599bd2215928d2cedab4185f6</sha>
       <link>https://github.com/mtxmiller/MobileTranscode</link>
       <creator>Eric Miller (mtxmiller)</creator>
       <email>ericlmiller@gmail.com</email>

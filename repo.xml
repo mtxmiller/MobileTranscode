@@ -8,7 +8,7 @@
       <title lang="EN">Mobile Transcode Rules</title>
       <desc lang="EN">Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and faster transcoding.</desc>
       <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.0.1/MobileTranscode-1.0.1.zip</url>
-      <sha>5c660a4dc0c4ce8599bd2215928d2cedab4185f6</sha>
+      <sha>1a7237590cd1b3a00c0ef6f9e1f56727d2c17def</sha>
       <link>https://github.com/mtxmiller/MobileTranscode</link>
       <creator>Eric Miller (mtxmiller)</creator>
       <email>ericlmiller@gmail.com</email>

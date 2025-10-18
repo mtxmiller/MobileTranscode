@@ -2,4 +2,4 @@ PLUGIN_MOBILETRANSCODE
 	EN	Mobile Transcode Rules
 
 PLUGIN_MOBILETRANSCODE_DESC
-	EN	Optimized custom-convert.conf rules for mobile Squeezebox clients (LyrPlay, xTune, Squeezelite). Uses FT flag for fast pipeline launch to prevent timeout errors. Copy rules to your LMS prefs directory.
+	EN	Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and faster transcoding.

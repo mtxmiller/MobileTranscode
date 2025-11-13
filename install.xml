@@ -2,7 +2,7 @@
 <extension>
   <name>PLUGIN_MOBILETRANSCODE</name>
   <module>Plugins::MobileTranscode::Plugin</module>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <description>PLUGIN_MOBILETRANSCODE_DESC</description>
   <creator>Eric Miller (mtxmiller)</creator>
   <homepageURL>https://github.com/mtxmiller/MobileTranscode</homepageURL>

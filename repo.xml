@@ -4,11 +4,11 @@
     <title lang="EN">Mobile Transcode Rules Repository</title>
   </details>
   <plugins>
-    <plugin name="MobileTranscode" version="1.0.1" minTarget="7.9" maxTarget="9.*">
+    <plugin name="MobileTranscode" version="1.1.0" minTarget="7.9" maxTarget="9.*">
       <title lang="EN">Mobile Transcode Rules</title>
-      <desc lang="EN">Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and faster transcoding.</desc>
-      <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.0.1/MobileTranscode-1.0.1.zip</url>
-      <sha>1a7237590cd1b3a00c0ef6f9e1f56727d2c17def</sha>
+      <desc lang="EN">Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and OGG Vorbis transcoding.</desc>
+      <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.1.0/MobileTranscode-1.1.0.zip</url>
+      <sha>12f9f7e43b16636b5fcc58f99f3277120b3839ae</sha>
       <link>https://github.com/mtxmiller/MobileTranscode</link>
       <creator>Eric Miller (mtxmiller)</creator>
       <email>ericlmiller@gmail.com</email>

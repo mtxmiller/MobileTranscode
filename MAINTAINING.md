@@ -151,7 +151,9 @@ Edit `install.xml` and bump the version:
 - **Minor (1.X.0)**: New features (like adding a new app's rules)
 - **Patch (1.0.X)**: Bug fixes, documentation updates
 
-### Step 4: Commit Version Bump
+### Step 4: Commit Version Bump to install.xml ONLY
+
+**Important:** Only commit version bump to `install.xml` now. Do NOT update `repo.xml` yet - you need the SHA1 first.
 
 ```bash
 git add install.xml
@@ -207,7 +209,9 @@ a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0  MobileTranscode-1.1.0.zip
 
 **Copy this SHA1** - you'll need it in the next step.
 
-### Step 7: Update repo.xml
+### Step 7: Update repo.xml WITH THE SHA1 YOU JUST CALCULATED
+
+⚠️ **CRITICAL:** Do NOT update `repo.xml` before you have the SHA1 from Step 6. The SHA1 must match the zip file exactly.
 
 Edit `MobileTranscode/repo.xml`:
 
@@ -217,6 +221,7 @@ Edit `MobileTranscode/repo.xml`:
   <details>
     <title lang="EN">Mobile Transcode Rules Repository</title>
   </details>
+```
   <plugins>
     <!-- UPDATE these three fields: -->
     <plugin name="MobileTranscode" version="1.1.0" minTarget="7.9" maxTarget="9.*">

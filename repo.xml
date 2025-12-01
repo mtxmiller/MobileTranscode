@@ -8,7 +8,7 @@
       <title lang="EN">Mobile Transcode Rules</title>
       <desc lang="EN">Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables WAV, Opus and OGG Vorbis transcoding.</desc>
       <url>https://github.com/mtxmiller/MobileTranscode/releases/download/v1.2.2/MobileTranscode-1.2.2.zip</url>
-      <sha>1387b7f96e1cab103ed3bfd66d4296dd23e7102a</sha>
+      <sha>3758866d5060c23c165a689d2b8b103f241b3ae4</sha>
       <link>https://github.com/mtxmiller/MobileTranscode</link>
       <creator>Eric Miller (mtxmiller)</creator>
       <email>ericlmiller@gmail.com</email>

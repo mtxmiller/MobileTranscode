@@ -104,6 +104,9 @@ Model=YourApp  →  Matches: flc flc YourApp *
 **OGG Vorbis Output:**
 - `-C 0` to `-C 10` - Quality level
 
+**MP3 Output:**
+- `-b 128` to `-b 320` - Bitrate (kbps), 320 recommended for quality
+
 ### Advanced: Manual Rule Location
 
 If you want to see or edit the rules directly:
@@ -155,5 +158,5 @@ MIT License - Free to use and modify.
 
 ---
 
-**Version**: 1.0.0
-**Last Updated**: October 2025
+**Version**: 1.3.0
+**Last Updated**: December 2025

@@ -3,3 +3,9 @@ PLUGIN_MOBILETRANSCODE
 
 PLUGIN_MOBILETRANSCODE_DESC
 	EN	Optimized custom-convert.conf rules for mobile Lyrion clients (LyrPlay). Enables Opus and faster transcoding.
+
+LYO
+	EN	Opus (LyrPlay offline copies)
+
+LYV
+	EN	Ogg Vorbis (LyrPlay offline copies)

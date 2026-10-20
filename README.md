@@ -174,5 +174,5 @@ MIT License - Free to use and modify.
 
 ---
 
-**Version**: 1.4.0
+**Version**: 1.4.1
 **Last Updated**: October 2026

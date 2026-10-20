@@ -99,8 +99,8 @@ player is unchanged.
 
 ### Capability Flags You Can Use
 
-- **I** (Initial) - Synchronous pipeline launch (waits for transcoder)
-- **F** (Fast) - Async pipeline launch (sends audio immediately)
+- **I** (Input) - Reads the source from stdin: streaming services (Qobuz, Tidal…) and remote URLs. Without it, LMS skips the rule for those sources and plays them in their native format
+- **F** (File) - Reads a local file from your library
 - **T** (Time) - Supports seek with `{START=--skip=%t}`
 - **U** (Until) - Supports duration with `{END=--until=%v}`
 - **D** (Resample) - Supports resampling with `{RESAMPLE=-r %d}`
@@ -174,5 +174,5 @@ MIT License - Free to use and modify.
 
 ---
 
-**Version**: 1.4.1
+**Version**: 1.5.0
 **Last Updated**: October 2026

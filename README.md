@@ -81,6 +81,22 @@ Model=YourApp  →  Matches: flc flc YourApp *
     [transcode pipeline]
 ```
 
+### Offline Copies (Downloads)
+
+LyrPlay downloads the songs coming up so it can keep playing through a dead
+spot. A download (`/music/<id>/download.<type>`) reaches LMS with no player,
+so only rules for any player (`* *`) can convert it. A `* *` rule to `ops` or
+`ogg` would also change what other players stream (squeezelite lists those
+before `flc`, and LMS takes the first match when "prioritize native format"
+is off). So the plugin converts downloads to two private types that no player
+advertises (`custom-types.conf`):
+
+- `lyo` - Opus 256k, same as the Opus stream rule
+- `lyv` - Ogg Vorbis quality 10, same as the Ogg stream rule
+
+Only a request for `download.lyo` / `download.lyv` uses them; streaming to any
+player is unchanged.
+
 ### Capability Flags You Can Use
 
 - **I** (Initial) - Synchronous pipeline launch (waits for transcoder)
@@ -158,5 +174,5 @@ MIT License - Free to use and modify.
 
 ---
 
-**Version**: 1.3.0
-**Last Updated**: December 2025
+**Version**: 1.4.0
+**Last Updated**: October 2026

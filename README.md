@@ -9,17 +9,18 @@ This plugin provides optimized transcode rules for mobile streaming apps that co
 ## Currently Supported Apps
 
 - **LyrPlay** (iOS) - Optimized for iPhone/iPad streaming
-- **Others?**
+- Other apps: add yours (see For Developers)
 
 ## Installation
 
 ### For Users
 
-1. In LMS web interface, go to **Settings → Plugins → Third Party**
-2. Add a 3rd party plugin at this link: https://raw.githubusercontent.com/mtxmiller/MobileTranscode/main/repo.xml
-3. Find **Mobile Transcode Rules** and click **Install**
-4. **Restart LMS**
-5. Done! Your mobile app automatically uses the optimized rules
+1. In LMS web interface, go to **Settings → Plugins**
+2. Under Third Party, find **Mobile Transcode Rules** and click **Install**
+3. **Restart LMS**
+4. Done! Your mobile app automatically uses the optimized rules
+
+If the plugin isn't listed, add this repository at the bottom of the Plugins page: `https://raw.githubusercontent.com/mtxmiller/MobileTranscode/main/repo.xml`
 
 **How it works:** LMS automatically searches all plugin directories for `custom-convert.conf` files. When you install this plugin, LMS finds and uses the rules immediately after restart.
 
@@ -40,17 +41,14 @@ Fork this repository and add your app's rules to `custom-convert.conf`:
 
 ```
 # YourAppName (Platform) - Brief description of your optimization choices
+# Two copies per rule: FT for local files, then IT with NOSTART=I for piped sources
 flc flc YourAppName *
-    # IFT:{START=--skip=%t}U:{END=--until=%v}D:{RESAMPLE=-r %d}
-    [flac] -dcs $START$ $END$ --force-raw-format --sign=signed --endian=little -- $FILE$ | [sox] -q -t raw --encoding signed-integer -b $SAMPLESIZE$ -r $SAMPLERATE$ -c $CHANNELS$ -L - -t flac -r 44100 -C 0 -b 16 -
+    # FT:{START=--skip=%t}U:{END=--until=%v}D:{RESAMPLE=-r %d}
+    [flac] -dcs $START$ $END$ --force-raw-format --sign=signed --endian=little -- $FILE$ | [sox] -q -t raw --encoding signed-integer -b $SAMPLESIZE$ -r $SAMPLERATE$ -c $CHANNELS$ -L - -t flac $RESAMPLE$ -C 0 -
 
-flc ops YourAppName *
-    # IFT:{START=--skip=%t}U:{END=--until=%v}D:{RESAMPLE=-r %d}
-    [flac] -dcs $START$ $END$ --force-raw-format --sign=signed --endian=little -- $FILE$ | [opusenc] --raw --raw-bits=$SAMPLESIZE$ --raw-rate=$SAMPLERATE$ --raw-chan=$CHANNELS$ --bitrate=256 - -
-
-flc ogg YourAppName *
-    # IFT:{START=--skip=%t}U:{END=--until=%v}D:{RESAMPLE=-r %d}
-    [flac] -dcs $START$ $END$ --force-raw-format --sign=signed --endian=little -- $FILE$ | [sox] -q -t raw --encoding signed-integer -b $SAMPLESIZE$ -r $SAMPLERATE$ -c $CHANNELS$ -L - -t ogg -C 10 -
+flc flc YourAppName *
+    # IT:{START=--skip=%t}U:{END=--until=%v}D:{RESAMPLE=-r %d}E:{NOSTART=I}
+    [flac] -dcs $START$ $END$ --force-raw-format --sign=signed --endian=little -- $FILE$ | [sox] -q -t raw --encoding signed-integer -b $SAMPLESIZE$ -r $SAMPLERATE$ -c $CHANNELS$ -L - -t flac $RESAMPLE$ -C 0 -
 ```
 
 See `custom-convert.conf` in this plugin for a complete template with detailed comments.
@@ -103,9 +101,10 @@ player is unchanged.
 - **F** (File) - Reads a local file from your library
 - **T** (Time) - Supports seek with `{START=--skip=%t}`
 - **U** (Until) - Supports duration with `{END=--until=%v}`
-- **D** (Resample) - Supports resampling with `{RESAMPLE=-r %d}`
+- **D** (Resample) - Supports resampling with `{RESAMPLE=-r %d}`. Only declare it if the command uses `$RESAMPLE$` (or the encoder resamples by itself)
+- **E:{NOSTART=I}** - Leaves out `$START$` when the input is piped
 
-**Choose flags based on your app's requirements** - different platforms have different needs.
+**Why two copies.** LMS offers a local file as I first, then F, and uses the first rule that accepts one of them. With a single `IFT` rule, local files are piped too. For a cue-sheet track LMS then starts the pipe at the track and also passes `--skip`, so the track comes out empty. Put an `FT` copy first (local files, exact `--skip`/`--until` on the file) and an `IT` copy with `E:{NOSTART=I}` second (piped sources). Same profile line twice is allowed; LMS tries them in order.
 
 ### Quality Parameters
 
@@ -171,8 +170,3 @@ MIT License - Free to use and modify.
 - **Eric Miller (mtxmiller)** - Plugin creator, LyrPlay developer
 - **Lyrion Community** - For maintaining LMS
 - **Mobile Squeezebox Developers** - For keeping the ecosystem alive
-
----
-
-**Version**: 1.5.0
-**Last Updated**: October 2026

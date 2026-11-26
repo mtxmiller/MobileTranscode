@@ -95,6 +95,11 @@ advertises (`custom-types.conf`):
 Only a request for `download.lyo` / `download.lyv` uses them; streaming to any
 player is unchanged.
 
+Their MIME types are private as well (`audio/x-lyrplay-opus`,
+`audio/x-lyrplay-vorbis`). LMS also uses MIME types to identify radio
+streams, so `audio/ogg` here made Ogg radio stations fail on every player
+whenever LMS read this plugin last (1.4.0 to 1.5.3).
+
 ### Capability Flags You Can Use
 
 - **I** (Input) - Reads the source from stdin: streaming services (Qobuz, Tidal…) and remote URLs. Without it, LMS skips the rule for those sources and plays them in their native format
